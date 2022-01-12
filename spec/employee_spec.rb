@@ -17,6 +17,7 @@ RSpec.describe Employee do
 
       expect(bobbi.name).to eq('Bobbi Jaeger')
       expect(bobbi.age).to be(30)
+      expect(bobbi.salary).to be(100000)
     end
   end
 end
