@@ -14,5 +14,11 @@ RSpec.describe Department do
 
       expect(customer_service.name).to eq("Customer Service")
     end
+
+    it 'can list the employees in a department' do
+      customer_service = Department.new("Customer Service")
+
+      expect(customer_service.employees).to eq([])
+    end
   end
 end
