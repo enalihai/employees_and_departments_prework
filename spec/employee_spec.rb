@@ -12,10 +12,11 @@ RSpec.describe Employee do
       expect(bobbi).to be_a(Employee)
     end
 
-    it 'can read names' do
+    it 'can read the data' do
       bobbi = Employee.new({name: "Bobbi Jaeger", age: "30", salary: "100000"})
 
       expect(bobbi.name).to eq('Bobbi Jaeger')
+      expect(bobbi.age).to be(30)
     end
   end
 end
