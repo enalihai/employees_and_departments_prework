@@ -26,8 +26,20 @@ RSpec.describe Budget do
       yearly_budget.add_to_budget(customer_service)
       yearly_budget.add_to_budget(sales)
 
-      
+
       expect(yearly_budget.departments).to eq([customer_service, sales])
+    end
+
+    it 'can list all under $500' do
+      yearly_budget = Budget.new("2021")
+      customer_service = Department.new("Customer Service")
+      sales = Department.new("Sales")
+      yearly_budget.add_to_budget(customer_service)
+      yearly_budget.add_to_budget(sales)
+      sales.expense(550)
+      customer_service.expense(450)
+
+      expect(yearly_budget.under_five?).to eq([customer_service])
     end
   end
 end
