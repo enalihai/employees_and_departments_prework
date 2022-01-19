@@ -30,7 +30,7 @@ RSpec.describe Budget do
       expect(yearly_budget.departments).to eq([customer_service, sales])
     end
 
-    it 'can list all under $500' do
+    xit 'can list all under $500' do
       yearly_budget = Budget.new("2021")
       customer_service = Department.new("Customer Service")
       sales = Department.new("Sales")
